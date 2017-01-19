@@ -9,7 +9,20 @@
   </head>
 
   <body>
-<%= render 'layouts/react_hot_assets' %>
-    <%= yield %>
+    <div class="wrapper">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Chatguru - React & Redux & ActionCable Demo App
+        </div>
+
+        <div class="panel-body">
+          <%= yield %>
+        </div>
+
+        <div class="panel-footer">
+          Made with love by Netguru
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,12 @@
+<div class="room-list">
+  <% rooms.each do |r| %>
+    <%= link_to room_path(r) do %>
+      <div class="room <%= "room--active" if r.id == room.id %>">
+        <span class="room-name"><%= r.name %><span>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="entries">
+</div>

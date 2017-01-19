@@ -1,2 +1,82 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+
+$lightgrey: #e3e3e3;
+$white: #fff;
+$black: #000;
+$grey: #c3c3c3;
+$lightblue: #00B0EB;
+
+body {
+  background-color: $lightgrey;
+}
+
+.wrapper {
+  height: 600px;
+  width: 800px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.panel {
+  box-shadow: 0 20px 20px -15px $grey;
+}
+
+.panel-body {
+  height: 450px;
+  padding: 0;
+}
+
+.room-list {
+  position: relative;
+  float: left;
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid $lightgrey;
+
+  a, a:visited, a:hover {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.room {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid $lightgrey;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $lightblue;
+    color: $white;
+  }
+
+  &--active {
+
+  }
+}
+
+.room-name {
+  padding-left: 15px;
+}
+
+
+.entries {
+  position: relative;
+  float: left;
+  width: 75%;
+  height: 100%;
+
+  &--disabled {
+    background-color: #f1f1f1;
+  }
+}

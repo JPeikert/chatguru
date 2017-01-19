@@ -1,0 +1,13 @@
+<div class="room-list">
+  <% rooms.each do |room| %>
+    <%= link_to room_path(room) do %>
+      <div class="room">
+        <span class="room-name"><%= room.name %><span>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="entries entries--disabled">
+  Choose a room to display messages
+</div>
