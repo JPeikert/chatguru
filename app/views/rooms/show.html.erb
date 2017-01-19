@@ -8,5 +8,21 @@
   <% end %>
 </div>
 
-<div class="entries">
+<div class="entries list-group">
+  <% messages.each do |message| %>
+      <%= render partial: 'message', locals: { message: message } %>
+  <% end %>
+
+  <div class="new-entry-form">
+    <form class="input-group">
+      <div class="input-group-addon">
+        <input type="text" placeholder="Your name" name="author">
+      </div>
+      <input type="text" class="form-control" placeholder="Message..." name="content"/>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-secondary">Send</button>
+      </span>
+      <input type="hidden" name="room_id" value="<%= room.id %>">
+    </form>
+  </div>
 </div>
