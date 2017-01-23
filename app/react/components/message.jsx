@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const Message = (props) => {
   return(
-    <div key={props.id} className="entry list-group-item">
+    <div className="entry list-group-item">
       <span><strong>{props.userName} </strong> </span>
       <span>- {moment(props.createdAt).calendar()}</span>
       <br/>

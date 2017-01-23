@@ -8,9 +8,8 @@ import MessagesSubscription from '../channels/messages_subscription';
 class MessageList extends Component {
 
   renderMessage(message) {
-    console.log(message)
     return (
-      <Message
+      <Message key={props.id}
         id={message.id}
         content={message.content}
         userName={message.user.name}
