@@ -4,7 +4,6 @@ import { bindActionCreators} from 'redux';
 
 import RoomList from '../containers/room_list';
 import MessageList from '../containers/message_list';
-import MessageForm from '../containers/message_form';
 
 class Chatguru extends Component {
   render() {
