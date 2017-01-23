@@ -1,5 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+console.log("Dirname: ", __dirname);
 module.exports = {
   entry: {
     main: ['./app/react/index.js']
