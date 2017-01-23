@@ -9,7 +9,7 @@ class MessageList extends Component {
 
   renderMessage(message) {
     return (
-      <Message key={props.id}
+      <Message key={message.id}
         id={message.id}
         content={message.content}
         userName={message.user.name}
