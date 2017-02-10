@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-export const LOAD_MESSAGES = 'LOAD_MESSAGES';
-export const SET_ACTIVE_ROOM = 'SET_ACTIVE_ROOM';
-export const SUBMIT_MESSAGE = 'SUBMIT_MESSAGE';
-export const DISPLAY_NEW_MESSAGE = 'DISPLAY_NEW_MESSAGE';
+import { LOAD_MESSAGES } from '../consts/index';
+import { SET_ACTIVE_ROOM } from '../consts/index';
+import { SUBMIT_MESSAGE } from '../consts/index';
+import { DISPLAY_NEW_MESSAGE } from '../consts/index';
 
 const BASE_URL = 'http://localhost:3000';
 
