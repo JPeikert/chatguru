@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { submitMessage } from '../actions/index';
 
 class MessageForm extends Component {
   constructor(props) {
@@ -13,10 +15,11 @@ class MessageForm extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    axios.post('http://localhost:3000/messages', {
-      content: this.state.message,
-      room_id: this.props.activeRoomId,
-    });
+    const message = this.state.message;
+    const roomId = this.props.activeRoomId;
+
+    this.props.submitMessage(message, roomId);
+
     this.setState({ message: '' });
   };
 
@@ -39,7 +42,11 @@ class MessageForm extends Component {
 };
 
 function mapStateToProps({ activeRoomId }) {
-  return { activeRoomId }
+  return { activeRoomId };
 }
 
-export default connect(mapStateToProps)(MessageForm);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ submitMessage }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);

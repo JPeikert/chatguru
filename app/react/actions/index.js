@@ -23,12 +23,25 @@ export const setActiveRoom = (roomId) => {
   return {
     type: SET_ACTIVE_ROOM,
     payload: roomId,
-  }
+  };
 };
 
 export const displayNewMessage = (data) => {
   return {
     type: DISPLAY_NEW_MESSAGE,
     payload: data.message,
-  }
+  };
+};
+
+export const submitMessage = (message, roomId) => {
+  const url = `${BASE_URL}/messages`;
+  const request = axios.post(url, {
+    content: message,
+    room_id: roomId,
+  });
+
+  return {
+    type: SUBMIT_MESSAGE,
+    payload: request
+  };
 }
