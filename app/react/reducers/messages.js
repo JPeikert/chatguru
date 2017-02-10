@@ -1,4 +1,4 @@
-import { LOAD_MESSAGES, DISPLAY_NEW_MESSAGE } from '../actions/index';
+import { LOAD_MESSAGES, DISPLAY_NEW_MESSAGE } from '../consts/index';
 
 export default (state = [], action) => {
   switch(action.type) {

@@ -1,4 +1,4 @@
-import { SET_ACTIVE_ROOM } from '../actions/index';
+import { SET_ACTIVE_ROOM } from '../consts/index';
 
 export default (state = null, action) => {
   switch(action.type) {
