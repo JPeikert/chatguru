@@ -7,11 +7,12 @@ import { displayNewMessage } from '../actions/index';
 class MessagesSubscription extends Component {
 
   connected() {
-    // Stuff when someone connects
+    // Notify someone has joined
   }
 
+
   disconnected() {
-    // Stuff when someone disconnects
+    // Notify someone has disconnected
   }
 
   received(data) {
@@ -21,14 +22,13 @@ class MessagesSubscription extends Component {
   render() {
     const roomId = this.props.activeRoomId;
 
-    if (this.props.activeRoomId) {
+    if (roomId) {
       App.messages = App.cable.subscriptions.create({
         channel: 'MessagesChannel',
-        room_id: this.props.activeRoomId,
+        room_id: roomId,
       }, {
         connected: this.connected,
         disconnected: this.disconnected,
-        // bind `this` to be able to access props in received function
         received: this.received.bind(this),
       });
     };
