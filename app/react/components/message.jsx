@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
 
-const Message = ({userName, createdAt, content}) => {
+const Message = ({id, userName, createdAt, content}) => {
   return(
-    <div key={id} lassName="entry list-group-item">
+    <div key={id} className="entry list-group-item">
       <span><b>{userName}</b></span>
       <span>- {moment(createdAt).calendar()}</span>
       <br/>
