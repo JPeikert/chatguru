@@ -7,7 +7,7 @@ import { DISPLAY_NEW_MESSAGE } from '../consts/index';
 
 const BASE_URL = 'http://localhost:3000';
 
-export function loadMessages(roomId) {
+export const loadMessages = (roomId) => {
   const url = `${BASE_URL}/messages?room_id=${roomId}`;
   const request = axios.get(url);
 
@@ -17,7 +17,7 @@ export function loadMessages(roomId) {
   };
 };
 
-export function setActiveRoom(roomId) {
+export const setActiveRoom = (roomId) => {
   if (App.messages) App.messages.unsubscribe();
 
   return {
@@ -26,7 +26,7 @@ export function setActiveRoom(roomId) {
   }
 };
 
-export function displayNewMessage(data) {
+export const displayNewMessage = (data) => {
   return {
     type: DISPLAY_NEW_MESSAGE,
     payload: data.message,
