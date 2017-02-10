@@ -19,10 +19,21 @@ class MessageList extends Component {
     );
   };
 
+  scrollToBottom() {
+    const scrollHeight = this.messageList.scrollHeight;
+    const height = this.messageList.clientHeight;
+    const maxScrollTop = scrollHeight - height;
+    this.messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  };
+
   render() {
     return(
       <div className="message-list">
-        <div className="entries list-group">
+        <div ref={(div) => { this.messageList = div }} className="entries list-group">
           {this.props.messages.map(this.renderMessage)}
         </div>
         <MessageForm />
