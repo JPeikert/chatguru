@@ -1,23 +1,22 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
 
-const Message = (props) => {
+const Message = ({userName, createdAt, content}) => {
   return(
-    <div className="entry list-group-item">
-      <span><strong>{props.userName} </strong> </span>
-      <span>- {moment(props.createdAt).calendar()}</span>
+    <div key={id} lassName="entry list-group-item">
+      <span><b>{userName}</b></span>
+      <span>- {moment(createdAt).calendar()}</span>
       <br/>
-      <span>{props.content}</span>
+      <span>{content}</span>
     </div>
   )
 }
 
 Message.propTypes = {
-  id: PropTypes.number,
-  content: PropTypes.string,
-  userName: PropTypes.string,
-  roomId: PropTypes.number,
-  createdAt: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  content: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
 };
 
 export default Message;
