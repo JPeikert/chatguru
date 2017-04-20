@@ -1,24 +1,41 @@
-# README
+# Chatguru
+Sample application presenting React / Redux / Rails / ActionCable integration.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technology Stack
+* Rails 5.0
+* Ruby 2.3
+* React 15.1.0
+* Bootstrap 3
+* PostgreSQL 9.6
 
-Things you may want to cover:
+## Setup
+In order to setup this application, you need to have PostgreSQL database installed. if you don't have it, then below you can find installation notes.
 
-* Ruby version
+Run setup script as presented below
+```
+./bin/setup
+```
 
-* System dependencies
+## Launch application
+``` rails s```
+``` npm start```
 
-* Configuration
+#### PostgreSQL Setup
+You can follow the instructions on [PostgreSQL site](http://www.postgresql.org/download/) or use Homebrew.
+- Follow instructions to install on [Homebrew site](http://brew.sh/)
+- Type `brew install postgresql`
+- Create your DB user `createuser -d -P postgres`
 
-* Database creation
+You can also use [Postgres.app](http://postgresapp.com/) and follow [Configure path section](http://postgresapp.com/documentation/cli-tools.html)
 
-* Database initialization
+Create `config/database.yml`:
 
-* How to run the test suite
+```sh
+cp config/database.sample.yml config/database.yml
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Create database:
 
-* Deployment instructions
-
-* ...
+```sh
+rake db:setup
+```
