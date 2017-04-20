@@ -30,7 +30,6 @@ class MessageList extends Component {
   };
 
   render() {
-    debugger;
     return(
       <div className="message-list">
         <div ref={(div) => { this.messageList = div }} className="entries list-group">
