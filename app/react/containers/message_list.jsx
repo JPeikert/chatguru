@@ -6,7 +6,6 @@ import MessageForm from '../containers/message_form';
 import MessagesSubscription from '../channels/messages_subscription';
 
 class MessageList extends Component {
-
   renderMessage(message) {
     return (
       <Message key={message.id}
@@ -31,6 +30,7 @@ class MessageList extends Component {
   };
 
   render() {
+    debugger;
     return(
       <div className="message-list">
         <div ref={(div) => { this.messageList = div }} className="entries list-group">
